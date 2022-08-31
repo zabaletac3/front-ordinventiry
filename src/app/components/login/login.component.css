@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+  /* height: 100vh; */
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* SECTION */
+
+section {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagen-formulario {
+  display: none;
+}
+
+.formulario {
+  max-width: 24rem;
+  min-width: 20rem;
+  min-height: 29rem;
+  box-shadow: 2px 2px 4px gray, -2px -2px 4px gray;
+  border-radius: 2rem;
+  font-size: 2rem;
+}
+
+.formulario-container {
+  width: 100;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  margin: 2rem 1rem;
+  gap: 3rem;
+}
+
+.formulario-container h2 {
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgb(87, 84, 84);
+}
+
+.formulario-container .input1 {
+  outline: unset;
+  border: none;
+  border-bottom: 2px solid #6d5fd1;
+  padding: 0;
+  transition: all 500ms ease-in-out;
+}
+
+.formulario-container .input1:focus {
+  border-bottom: 2px solid #402bdf;
+  transform: scale(1.2, 1.2);
+}
+
+#btn-submit {
+  font-size: 1rem;
+  padding: 0.5rem 3rem;
+  border-radius: 0.4rem;
+  border: 1px solid #6d5fd1;
+  background-color: #6d5fd1;
+  border-bottom: 3px solid #2d2761;
+  transition: all 500ms ease-in-out;
+  box-shadow: 3px 3px 5px gray;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#btn-submit:hover {
+  transform: scale(1.3, 1.3);
+}
+
+.btn-registro {
+  position: relative;
+  top: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid #402bdf;
+  transition: 500ms all ease-in-out;
+  font-size: 1rem;
+}
+
+.btn-registro:hover {
+  transform: scale(1.1, 1.1);
+  transform: translateX(-50%);
+  background-color: #6d5fd1;
+  padding: 0.4em;
+  border-radius: 0.7rem;
+}
+
+.btn-registro a {
+  color: inherit;
+}
+
+@media only screen and (min-width: 768px) {
+  /* SECTION   */
+
+  section {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 4rem;
+    gap: 2rem;
+  }
+
+  .imagen-formulario {
+    display: block;
+    width: 500px;
+    transition: 600ms all ease-in-out;
+    filter: drop-shadow(3px 3px 5px #402bdf);
+  }
+
+  .imagen-formulario img {
+    width: 100%;
+  }
+
+  .imagen-formulario:hover {
+    transform: scale(1.3, 1.3);
+  }
+}

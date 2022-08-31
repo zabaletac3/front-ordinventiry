@@ -1,0 +1,24 @@
+<section>
+    <table class="table table-hover table-primary table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of productsList; let idx = index;">
+                <th scope="row">{{idx + 1 }}</th>
+                <td>{{product.nom_producto}}</td>
+                <td>{{product.precio}}</td>
+                <td>
+                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modaDetailUser">Ver</button>
+                    <button class="btn btn-sm btn-success">Editar</button>
+                    <button class="btn btn-sm btn-danger" >Borrar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </section>
