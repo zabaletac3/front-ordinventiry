@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DetailProductComponent } from './components/products/detail-product/detail-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,12 @@ import { DetailProductComponent } from './components/products/detail-product/det
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    DetailProductComponent
+    DetailProductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
