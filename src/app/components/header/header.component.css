@@ -21,6 +21,16 @@ a {
 
 /* HEADER  */
 
+.nav-menu a.active-link {
+    border: 1px solid #58ace0;
+    /* border-bottom: 4px solid #2d2761;s */
+    background-color:#58ace0;
+    border-radius: 0.4rem;
+    color: black;
+    transition: all 500ms ease-in-out;
+    padding: 0.3rem;
+}
+
 .nav {
     box-shadow: 2px 2px 4px gray;
     padding: 2rem 0;
@@ -66,7 +76,7 @@ a {
 
 .nav-menu a {
     border: 1px solid #6D5FD1;
-    border-bottom: 4px solid #2d2761;
+    /* border-bottom: 4px solid #2d2761; */
     background-color: #6D5FD1;
     border-radius: 0.4rem;
     color: black;
@@ -75,7 +85,7 @@ a {
 }
 
 .nav-menu a:hover {
-    border-bottom: 4px solid #6D5FD1;
+    /* border-bottom: 4px solid #6D5FD1; */
     background-color: #2d2761;
     color: #fff;
 }
