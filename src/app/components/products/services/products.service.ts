@@ -19,9 +19,9 @@ export class productsService {
         return this.http.get(`${this.baseURL}/products`);
     }
 
-    // updateById(): Observable<any> {
-    //     return this.http.put(`${this.baseURL}/products/${cod}`);
-    // }
+    updateById(cod: number, nom_producto: string): Observable<any> {
+        return this.http.put(`${this.baseURL}/products/${cod}`, `${this.baseURL}/products/${nom_producto}`);
+    }
 
     deleteById(cod: number): Observable<any> {
         return this.http.delete(`${this.baseURL}/products/${cod}`);
