@@ -10,7 +10,7 @@ export class UsersService {
 
   baseURL = environment.baseURL;
 
-  constructor(
+  constructor( 
     private readonly http: HttpClient
   ) { }
 
@@ -22,4 +22,4 @@ export class UsersService {
     return this.http.delete(`${this.baseURL}/users/${id}`);
   }
 
-}
+} 

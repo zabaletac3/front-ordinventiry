@@ -12,7 +12,7 @@ export class ListUserComponent implements OnInit {
   userList: any[] = [];
 
   selectedUser: any = {};
-
+ 
   constructor( 
     private readonly userService: UsersService
   ) { }
@@ -56,7 +56,7 @@ export class ListUserComponent implements OnInit {
         Swal.fire(`${res.message}`, '', 'info');
         this.findAll();
       }
-    });
+    }); 
   }
 
 }
