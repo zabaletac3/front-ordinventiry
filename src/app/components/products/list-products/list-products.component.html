@@ -1,6 +1,6 @@
 <section>
     <form>
-        <button class="btn btn-dark my-3" type="submit">Solicitar</button>
+        <button class="btn btn-dark my-3" type="button" (click)="onSolicitar()">Solicitar</button>
         <table class="table table-hover table-primary table-bordered">
             <thead>
                 <tr>
@@ -20,7 +20,8 @@
                             (click)="detailProduct(product)">Ver</button>
                         <button class="btn btn-sm btn-success">Editar</button>
                         <button class="btn btn-sm btn-danger">Borrar</button>
-                        <input class="mx-3" type="checkbox" name="Seleccionar" id="">
+                        <input class="mx-3" type="checkbox" name="Seleccionar" id="" 
+                        (change)="onSelectProduct($event, product)">
                     </td>
                 </tr>
             </tbody>

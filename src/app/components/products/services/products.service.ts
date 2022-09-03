@@ -27,4 +27,6 @@ export class productsService {
         return this.http.delete(`${this.baseURL}/products/${cod}`);
     }
 
+    
+
 }

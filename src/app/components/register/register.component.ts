@@ -47,19 +47,27 @@ export class RegisterComponent implements OnInit {
 
     const { username, identificacion, contrasena, role } = this.registerForm.value;
 
-    const atrUser: AtrUser = { username, identificacion, contrasena, role }
+    // const atrUser: AtrUser = { username, identificacion, contrasena, role }
 
     console.log(this.registerForm.value);
     this.registerServices.crearUser({ username, identificacion, contrasena, role })
       .subscribe({
-        next: res => {
-          // Swal.fire({
-          //   icon: 'success',
-          //   title: 'Registro exitoso',
-          //   text: `${username}`
-          // })
+        next: (res:any) => {
           console.log(res);
-          // console.log('Usuario creado');
+          if(res.ok){
+            Swal.fire({
+              icon: 'success',
+              title: 'Registro exitoso',
+              text: `${username}: ${res.message}`
+            })
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Registro no exitoso',
+              text: `${username}: ${res.message}`
+            })
+          }
+          
         }, error: Error => {
           console.log(Error.error.message);
           Swal.fire({

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
     const { username, contrasena } = this.loginForm.value;
 
-    const atrLogin: AtrLogin = { username, contrasena }
+    // const atrLogin: AtrLogin = { username, contrasena }
 
     this.loginService.login({ username, contrasena })
       .subscribe({

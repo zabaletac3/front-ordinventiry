@@ -13,6 +13,8 @@ export class ListProductsComponent implements OnInit {
 
   selectedProduct: any = {};
 
+  productsInComprobante: any[] = [];
+
   constructor(
     private readonly productsService: productsService
   ) { }
@@ -57,6 +59,21 @@ export class ListProductsComponent implements OnInit {
         this.findAll();
       }
     });
+  }
+
+  onSelectProduct($event, product: any){
+    const isCheck = $event.currentTarget.checked;
+    if(isCheck) this.productsInComprobante.push(product);
+    else {
+      this.productsInComprobante = this.productsInComprobante.filter(prd => prd.cod != product.cod);
+    }
+  }
+
+  onSolicitar(){
+    console.log(this.productsInComprobante);
+
+    // condición o función que guarde un comprobante en la base de datos, llamando a el service 
+
   }
 
 }
