@@ -18,6 +18,10 @@ export class UsersService {
     return this.http.get(`${this.baseURL}/users`);
   }
 
+  // updateById(): Observable<any>{
+  //   return this.http.patch(`${this.baseURL}/users/${id}`, editData)
+  // }
+
   deleteById(id: number): Observable<any>{
     return this.http.delete(`${this.baseURL}/users/${id}`);
   }

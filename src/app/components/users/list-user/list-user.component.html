@@ -1,31 +1,32 @@
 <section>
-<table class="table table-hover table-primary table-bordered">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Username</th>
-            <th scope="col">Identificación</th>
-            <th scope="col">Rol</th>
-            <th scope="col">Acción</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of userList; let idx = index;">
-            <th scope="row">{{idx + 1 }}</th>
-            <td>{{user.username}}</td>
-            <td>{{user.identificacion}}</td>
-            <td>{{user.role}}</td>
-            <td>
-                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modaDetailUser"
-                    (click)="detailUser(user)">Ver</button>
-                <button class="btn btn-sm btn-success">Editar</button>
-                <button class="btn btn-sm btn-danger" 
-                (click)="showAlertDeleteUser(user.id)">Borrar</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <table class="table table-hover table-primary table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Username</th>
+                <th scope="col">Identificación</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userList; let idx = index;">
+                <th scope="row">{{idx + 1 }}</th>
+                <td>{{user.username}}</td>
+                <td>{{user.identificacion}}</td>
+                <td>{{user.role}}</td>
+                <td>
+                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modaDetailUser"
+                        (click)="detailUser(user)">Ver</button>
+                    <button class="btn btn-sm btn-success" (click)="editUser(user)">Editar</button>
+                    <button class="btn btn-sm btn-danger" (click)="showAlertDeleteUser(user.id)">Borrar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
-<app-detail-user [user]="selectedUser" 
-*ngIf="selectedUser != null"></app-detail-user>
+<app-edit-user> [user]="selectedUser"
+    *ngIf="selectedUser != null"</app-edit-user>
+
+<app-detail-user [user]="selectedUser" *ngIf="selectedUser != null"></app-detail-user>

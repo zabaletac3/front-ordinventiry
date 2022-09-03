@@ -1,1 +1,22 @@
-<p>edit-user works!</p>
+<!-- Modal de usuario -->
+<div class="modal fade" id="modaDetailUser" tabindex="-1" 
+aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="user != null">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detalle de usuario: {{user.id}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" 
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4>Usuario: {{user.username}}</h4>
+                <span>Identificación: {{user.identificacion}}</span><br>
+                <span>Rol: {{user.role}}</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>

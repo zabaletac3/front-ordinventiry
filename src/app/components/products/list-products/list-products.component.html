@@ -19,7 +19,8 @@
                         <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modaDetailUser"
                             (click)="detailProduct(product)">Ver</button>
                         <button class="btn btn-sm btn-success">Editar</button>
-                        <button class="btn btn-sm btn-danger">Borrar</button>
+                        <button class="btn btn-sm btn-danger"
+                        (click)="showAlertDeleteProduct(product.cod)">Borrar</button>
                         <input class="mx-3" type="checkbox" name="Seleccionar" id="" 
                         (change)="onSelectProduct($event, product)">
                     </td>

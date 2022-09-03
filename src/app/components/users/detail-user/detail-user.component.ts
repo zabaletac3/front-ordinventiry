@@ -12,7 +12,7 @@ export class DetailUserComponent implements OnInit, OnDestroy {
   constructor() { }
   
   ngOnDestroy(): void {
-    console.log(this.user);
+    console.log(this.user); 
   }
 
   ngOnInit(): void {
