@@ -4,7 +4,9 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { ReturnStatement } from '@angular/compiler';
+import { ReturnStatement, ThisReceiver } from '@angular/compiler';
+import { AtrUser } from 'src/app/interfaces/register-form.interface';
+
 
 
 @Injectable({
@@ -16,13 +18,20 @@ export class RegisterService {
 
     constructor(
         private readonly http: HttpClient
-    ) { }
 
-    create(model: any ): Observable<any>{
-    return this.http.post(`${this.baseURL}/register/`,`${model}`);
-    }
+    ) { }
+    // form1
+    // create(model: any ): Observable<any>{
+    // return this.http.post(`${this.baseURL}/register/`,`${model}`);
+    // }
 
     // addNewUser():Observable<void>{}
 
+
+    crearUser( formData: AtrUser ) {
+
+    return this.http.post(`${this.baseURL}/register`, formData);
+
+    }
 
 }

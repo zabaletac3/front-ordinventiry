@@ -2,18 +2,35 @@
     <div class="imagen-formulario">
         <img src="/assets/img/imagen-form.svg" alt="">
     </div>
+    
     <div class="formulario">
+        <form (ngSubmit)="crearUser()" [formGroup]="registerForm" autocomplete="off" class="formulario-container">
+            <h2>Registro</h2>
+            <input formControlName="username" class="input1" type="text" name="username" id="Usuario" placeholder="Usuario">
+            <input formControlName="identificacion" type="text" name="identificacion" placeholder="Identidicación" class="input1">
+            <input formControlName="contrasena" class="input1" type="password" name="contrasena" id="password" placeholder="Contraseña">
+            <select formControlName="role" name="role">
+                <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+                <option value="ROLE_EMP">ROLE_EMP</option>
+            </select>
+            <button class="for-check" type="submit" id="btn-submit">Regístrate</button>
+            <!-- <input class="for-check" value="Registrarte" id="btn-submit" required> -->
+        </form>
+        <button class="btn-registro"><a href="/register">Regístrate</a></button>
+    </div>
+
+    <!-- <div class="formulario">
         <form (ngSubmit)="createUser(registerForm)" #registerForm="ngForm" class="formulario-container">
             <h2>Registro</h2>
             <input class="input1" type="text" name="username" id="Usuario" placeholder="Usuario" [(ngModel)]="model.username" required >
             <input type="number" name="identificacion" placeholder="Identidicación" class="input1" [(ngModel)]="model.identificacion">
             <input class="input1" type="password" name="contrasena" id="password" placeholder="Contraseña" [(ngModel)]="model.contrasena" required>
-            <select name="role" ngModel="role">
+            <select name="role" [(ngModel)]="model.role">
                 <option value="ROLE_ADMIN">ROLE_ADMIN</option>
                 <option value="ROLE_EMP">ROLE_EMP</option>
             </select>
             <input class="for-check" type="submit" value="Registrarte" id="btn-submit" required>
         </form>
-        <button (click)="createUser(registerForm)" class="btn-registro"><a href="/register">Regístrate</a></button>
-    </div>
+        <button class="btn-registro"><a href="/register">Regístrate</a></button>
+    </div> -->
 </section>
