@@ -3,13 +3,13 @@
         <img src="/assets/img/img-form.svg" alt="">
     </div>
     <div class="formulario">
-        <form action="/login" method="POST" class="formulario-container">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off" class="formulario-container">
             <h2>Ingreso</h2>
             <!-- <input type="text" name="" id=""> -->
-            <input class="input1" type="text" name="username" id="Usuario" placeholder="Usuario">
-            <input class="input1" type="password" name="contrasena" id="password" placeholder="Contraseña">
+            <input formControlName="username" class="input1" type="text" name="username" id="Usuario" placeholder="Usuario">
+            <input formControlName="contrasena" class="input1" type="password" name="contrasena" id="password" placeholder="Contraseña">
             <input type="submit" value="Entrar" id="btn-submit">
         </form>
-        <button class="btn-registro"><a href="/register">Regístrate</a></button>
+        <button routerLink="/register" class="btn-registro"><a href="/register">Regístrate</a></button>
     </div>
 </section>

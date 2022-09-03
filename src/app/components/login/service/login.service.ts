@@ -8,13 +8,14 @@ import { ReturnStatement, ThisReceiver } from '@angular/compiler';
 import { AtrUser } from 'src/app/interfaces/register-form.interface';
 import { catchError } from 'rxjs';
 import { throwError as observableThrowError } from 'rxjs';
-
+import { AtrLogin } from 'src/app/interfaces/interface-login.interface';
 
 
 @Injectable({
     providedIn: 'root'
 })
-export class RegisterService {
+
+export class LoginService {
 
     baseURL = environment.baseURL;
 
@@ -23,9 +24,9 @@ export class RegisterService {
 
     ) { }
 
-    crearUser(formData: AtrUser) {
+    login(formData: AtrLogin ) {
 
-        return this.http.post(`${this.baseURL}/register`, formData)
+        return this.http.post(`${this.baseURL}/login`, formData)
 
 
     }
