@@ -25,7 +25,6 @@ interface registerForm {
 export class RegisterComponent implements OnInit {
 
 
-
   registerForm = this.fb.group({
     username: ['', Validators.required],
     identificacion: ['', Validators.required],
@@ -77,6 +76,7 @@ export class RegisterComponent implements OnInit {
         }
       })
   }
+
 
 
 

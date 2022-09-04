@@ -9,6 +9,7 @@ import { AtrUser } from 'src/app/interfaces/register-form.interface';
 import { catchError } from 'rxjs';
 import { throwError as observableThrowError } from 'rxjs';
 import { AtrLogin } from 'src/app/interfaces/interface-login.interface';
+import { tap } from 'rxjs';
 
 
 @Injectable({
@@ -27,6 +28,12 @@ export class LoginService {
     login(formData: AtrLogin ) {
 
         return this.http.post(`${this.baseURL}/login`, formData)
+                    .pipe(
+                        tap( ( resp: any ) => {
+                            console.log(resp);
+                            localStorage.setItem('token', resp.token)
+                        })
+                    );
 
 
     }

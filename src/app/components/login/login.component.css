@@ -89,7 +89,7 @@ section {
 
 .btn-registro {
   position: relative;
-  top: 1rem;
+  top:0;
   left: 50%;
   transform: translate(-50%);
   background-color: inherit;
@@ -103,7 +103,7 @@ section {
   transform: scale(1.1, 1.1);
   transform: translateX(-50%);
   background-color: #6d5fd1;
-  padding: 0.4em;
+  padding: 0.4rem;
   border-radius: 0.7rem;
 }
 
