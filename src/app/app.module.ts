@@ -16,6 +16,8 @@ import { DetailProductComponent } from './components/products/detail-product/det
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { PagefotfoundComponent } from './components/pagefotfound/pagefotfound.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { RouterModule } from '@angular/router';
     LoginComponent,
     RegisterComponent,
     DetailProductComponent,
+    InicioComponent,
+    PagefotfoundComponent,
   ],
   imports: [
     BrowserModule,

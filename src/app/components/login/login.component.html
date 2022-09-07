@@ -10,8 +10,8 @@
             <input formControlName="contrasena" class="input1" type="password" name="contrasena" id="password" placeholder="Contraseña">
 
             <!-- VALIDACIÓN DE FORMULARIO -->
-            <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.errors" class="text-danger">Username es obligatorio</div>
-            <div *ngIf="loginForm.get('contrasena')?.touched && loginForm.get('contrasena')?.errors" class="text-danger">Contraseña es obligatoria</div>
+            <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.errors" class="text-danger ">Username es obligatorio</div>
+            <div *ngIf="loginForm.get('contrasena')?.touched && loginForm.get('contrasena')?.errors" class="text-danger ">Contraseña es obligatoria</div>
 
             <input type="submit" value="Entrar" id="btn-submit">
         </form>
