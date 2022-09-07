@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-pagefotfound',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagefotfoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+
+    public router: Router
+
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  goHome() {
+    this.router.navigateByUrl('/login');
   }
 
 }
