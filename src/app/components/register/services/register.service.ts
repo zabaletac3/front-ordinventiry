@@ -27,16 +27,16 @@ export class RegisterService {
     crearUser(formData: AtrUser) {
 
         return this.http.post(`${this.baseURL}/register`, formData)
-        .pipe(
-            tap( ( resp: any ) => {
-                console.log(resp);
-                localStorage.setItem('token', resp.token)
-            })
-        );
-
-
+        // .pipe(
+        //     tap( ( resp: any ) => {
+        //         console.log(resp);
+        //         localStorage.setItem('token', resp.token)
+        //     })
+        // );
     }
 
-
+    isRegister(): boolean {
+        return !!localStorage.getItem('token')
+    }
 
 }

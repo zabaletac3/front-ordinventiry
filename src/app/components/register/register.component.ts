@@ -7,6 +7,7 @@ import { AtrUser } from 'src/app/interfaces/register-form.interface';
 import { __values } from 'tslib';
 import { RegisterService } from './services/register.service';
 import Swal from 'sweetalert2'
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface registerForm {
   "username": string,
@@ -35,6 +36,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private registerServices: RegisterService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -52,6 +54,7 @@ export class RegisterComponent implements OnInit {
     this.registerServices.crearUser({ username, identificacion, contrasena, role })
       .subscribe({
         next: (res:any) => {
+          localStorage.setItem('token', res.token);
           console.log(res);
           if(res.ok){
             Swal.fire({
@@ -59,6 +62,7 @@ export class RegisterComponent implements OnInit {
               title: 'Registro exitoso',
               text: `${username}: ${res.message}`
             })
+            this.router.navigateByUrl('/login')
           } else {
             Swal.fire({
               icon: 'error',

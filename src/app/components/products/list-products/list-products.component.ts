@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { productsService } from '../services/products.service';
 import Swal from 'sweetalert2';
+import { UsersService } from '../../users/services/users.service';
 
 @Component({
   selector: 'app-list-products',
@@ -16,7 +17,8 @@ export class ListProductsComponent implements OnInit {
   productsInComprobante: any[] = [];
 
   constructor(
-    private readonly productsService: productsService
+    private readonly productsService: productsService,
+    public userService: UsersService
   ) { }
 
   ngOnInit(): void {
@@ -75,5 +77,11 @@ export class ListProductsComponent implements OnInit {
     // condición o función que guarde un comprobante en la base de datos, llamando a el service 
 
   }
+
+
+  
+
+
+
 
 }

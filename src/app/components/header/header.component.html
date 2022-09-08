@@ -16,14 +16,14 @@
     <ul class="nav-menu">
         <p class="texto-logo">OrdVentory</p>
         <li class="logo"><img src="/assets/img/logo.svg" alt="Logo"></li>
-        <li><a  *ngIf="!loginService.isLogged()" routerLink="/register" routerLinkActive="active-link">Registro</a></li>
-        <li><a  *ngIf="!loginService.isLogged()" routerLink="/login" routerLinkActive="active-link">Ingreso</a></li>
+        <li><a  *ngIf="!loginService.isLogged() || registerService.isRegister()" routerLink="/register" routerLinkActive="active-link">Registro</a></li>
+        <li><a  *ngIf="!loginService.isLogged() || !registerService.isRegister()" routerLink="/login" routerLinkActive="active-link">Ingreso</a></li>
         <li><a href="#">Información</a></li>
-        <li><a *ngIf="loginService.isLogged()" routerLink="/users" routerLinkActive="active-link">Usuarios</a></li>
-        <li><a *ngIf="loginService.isLogged()" routerLink="/products" routerLinkActive="active-link" >Productos</a></li>
+        <li><a *ngIf="loginService.isLogged() && !registerService.isRegister()" routerLink="/users" routerLinkActive="active-link">Usuarios</a></li>
+        <li><a *ngIf="loginService.isLogged() && !registerService.isRegister()" routerLink="/products" routerLinkActive="active-link" >Productos</a></li>
     </ul>
     <div  class="logout">
-        <a *ngIf="loginService.isLogged()" (click)="loginService.logout()" > Logout</a>
+        <a *ngIf="loginService.isLogged() && !registerService.isRegister()" (click)="loginService.logout()" > Logout</a>
     </div>
     </nav>
 </header>
