@@ -4,6 +4,7 @@ export interface AtrUser {
         identificacion: string | null | undefined;
         contrasena: string | null | undefined;
         role: string | null | undefined;
+        
 
 }
 

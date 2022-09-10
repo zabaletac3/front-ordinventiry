@@ -54,9 +54,9 @@ export class RegisterComponent implements OnInit {
     this.registerServices.crearUser({ username, identificacion, contrasena, role })
       .subscribe({
         next: (res:any) => {
-          localStorage.setItem('token', res.token);
           console.log(res);
           if(res.ok){
+            localStorage.setItem('token', res.data.token);
             Swal.fire({
               icon: 'success',
               title: 'Registro exitoso',
