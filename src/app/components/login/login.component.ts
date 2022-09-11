@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Routes } from '@angular/router';
-import { mergeScan } from 'rxjs';
-import { AtrLogin } from 'src/app/interfaces/interface-login.interface';
-import { AtrUser } from 'src/app/interfaces/register-form.interface';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { LoginService } from './service/login.service';
 
+import { LoginService } from './service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -22,14 +18,14 @@ export class LoginComponent implements OnInit {
   });
 
 
-  constructor( 
-      private fb: FormBuilder,
-      private loginService: LoginService,
-      private router: Router
-      ) { }
+  constructor(
+    private fb: FormBuilder,
+    private loginService: LoginService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-  
+
   }
 
   login() {
@@ -41,6 +37,14 @@ export class LoginComponent implements OnInit {
     this.loginService.login({ username, contrasena })
       .subscribe({
         next: (res: any) => {
+          console.log(res);
+          if (!res.ok) {
+            Swal.fire({
+              icon: 'error',
+              text: res.msg
+            });
+            return;
+          }
           localStorage.setItem('token', res.token)
           Swal.fire({
             icon: 'success',
