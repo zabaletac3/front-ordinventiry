@@ -1,4 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-detail-user',
@@ -9,7 +10,7 @@ export class DetailUserComponent implements OnInit, OnDestroy {
 
   @Input() user: any = null;
 
-  constructor() { }
+  constructor(private readonly userService: UsersService) { }
   
   ngOnDestroy(): void {
     console.log(this.user); 
