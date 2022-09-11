@@ -18,7 +18,7 @@
             <tr *ngFor="let user of userList; let idx = index;">
                 <th scope="row">{{idx + 1 }}</th>
                 <td>{{user.username}}</td>
-                <td>{{user.identificacion}}</td>
+                <td>{{user.identificacion.id}}</td>
                 <td>{{user.role}}</td>
                 <td>
                     <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modaDetailUser"
